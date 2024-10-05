@@ -34,6 +34,7 @@ public class XeFrame extends javax.swing.JFrame {
         // Thực hiện lắng nghe sự kiện
         setupTableListenersSV();
         loadMaSVIntoComboBox();
+        loadLoaiVeIntoComboBox();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
 
@@ -50,12 +51,12 @@ public class XeFrame extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,14 +73,6 @@ public class XeFrame extends javax.swing.JFrame {
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("Ngày gửi xe");
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
             }
         });
 
@@ -124,31 +117,40 @@ public class XeFrame extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        jLabel4.setText("Loại Vé");
+
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, 0, 300, Short.MAX_VALUE))
-                        .addGap(87, 87, 87))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, 0, 300, Short.MAX_VALUE)
+                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(87, 87, 87))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(107, 107, 107))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,17 +163,17 @@ public class XeFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 22, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
+                    .addComponent(jLabel4)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(125, 125, 125))
         );
 
         pack();
@@ -187,15 +189,11 @@ public class XeFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         jComboBox1.setSelectedItem(null);// Mã Sinh viên 
-        jTextField1.setText(""); // Biển số xe
-        jTextField2.setText(""); // Ngày đăng ký
+        jTextField1.setText(""); // Biển số 
+        jComboBox2.setSelectedItem(null); //Loai ve
         CurrentBienSo= "";
         jButton1.setText("Lưu");
 
@@ -211,63 +209,43 @@ public class XeFrame extends javax.swing.JFrame {
                 return false;
             }
         }
-//    private boolean kiemTraSoXeDangKy(String maSV) throws SQLException {
-//    String query = "SELECT COUNT(*) FROM XeDangKy WHERE MaSV = ?";
-//    try (Connection conn = MySqlConnect.getConnection();
-//         PreparedStatement pstmt = conn.prepareStatement(query)) {
-//        pstmt.setString(1, maSV);
-//        ResultSet rs = pstmt.executeQuery();
-//        if (rs.next() && rs.getInt(1) >= 2) {
-//            JOptionPane.showMessageDialog(this, "Sinh viên đã đăng ký tối đa 2 xe.", "Lỗi", JOptionPane.ERROR_MESSAGE);
-//            return false;
-//        }
-//    }catch (Exception ex) {
-//            System.out.println("Có lỗi xảy ra. Thêm mới không thành công!");
-//            JOptionPane.showMessageDialog(null, "Có lỗi xảy ra. Thêm mới không thành công!", "Success", JOptionPane.INFORMATION_MESSAGE);
-//    }
-//    return true;
-//    }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Lấy dữ liệu từ các JTextField
         String BienSo = jTextField1.getText();
-        String NgayDangKy = jTextField2.getText();
         String MaSV;
         if (jComboBox1.getSelectedItem() != null) {
             MaSV = jComboBox1.getSelectedItem().toString();
         } else {
             MaSV = "";
         }
-        boolean validateNgayDangKy = isValidDate(NgayDangKy);
-        //boolean validateSoXeDangKy = kiemTraSoXeDangKy(MaSV);
-        String sql;
-        System.out.println(NgayDangKy);
-        System.out.println(validateNgayDangKy);
-        if (MaSV.isEmpty() || BienSo.isEmpty() || NgayDangKy.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin!", "Lỗi", JOptionPane.ERROR_MESSAGE);
-        }else if (validateNgayDangKy != true){
-            JOptionPane.showMessageDialog(this, "Ngày đăng ký không hợp lệ. Vui lòng nhập theo định dạng yyyy-MM-dd", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        String LoaiVe;
+        if (jComboBox2.getSelectedItem() != null) {
+            LoaiVe = jComboBox2.getSelectedItem().toString();
+        } else {
+            LoaiVe = "";
         }
-//        else if (!kiemTraSoXeDangKy(MaSV)){
-//            JOptionPane.showMessageDialog(this, "Sinh viên đã đăng ký tối đa 2", "Lỗi", JOptionPane.ERROR_MESSAGE);
-//            loadTableData();
-//        }
+        String sql;
+        if (MaSV.isEmpty() || BienSo.isEmpty() ){
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        }
         boolean isUpdating = !CurrentBienSo.isEmpty();
         System.out.print(isUpdating);
         if(isUpdating){
             // Câu lệnh UPDATE
-            sql = "UPDATE XeDangKy SET MaSV ='" + MaSV + "', BienSo ='" + BienSo + "',  NgayDangKy ='" + NgayDangKy + "' WHERE BienSo = " + this.CurrentBienSo;
+            sql = "UPDATE XeDangKy SET MaSV ='" + MaSV + "', BienSo ='" + BienSo + "',  LoaiVe ='" + LoaiVe + "' WHERE BienSo = " + this.CurrentBienSo;
         } else {
             // Câu lệnh INSERT
-            sql = "INSERT INTO XeDangKy (MaSV, BienSo, NgayDangKy) VALUES ('" + MaSV + "', '" + BienSo + "', '" + NgayDangKy + "')";
+            sql = "INSERT INTO XeDangKy (MaSV, BienSo,LoaiVe) VALUES ('" + MaSV + "', '" + BienSo + "', '" + LoaiVe + "')";
         }
+        System.out.print(sql);
         try {
             int rowsAffected = MySqlConnect.executeUpdate(sql);
             if (rowsAffected > 0) {
                 jButton1.setText("Lưu");
-                if (!isUpdating & validateNgayDangKy == true){
+                if (!isUpdating ){
                     JOptionPane.showMessageDialog(null, "Thêm mới thành công!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                }else if(isUpdating & validateNgayDangKy == true){
+                }else if(isUpdating ){
                     JOptionPane.showMessageDialog(null, "Sửa thành công!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 }
                 this.CurrentBienSo = "";
@@ -291,6 +269,10 @@ public class XeFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
     private void loadMaSVIntoComboBox(){
         String sqlcombobox1 = "SELECT MaSV FROM SinhVien";
         try {
@@ -303,6 +285,22 @@ public class XeFrame extends javax.swing.JFrame {
         }
 
     }
+    private void loadLoaiVeIntoComboBox() {
+        // Giá trị cố định để thêm vào ComboBox
+        String[] loaiVeValues = {"Vé tháng", "Vé ngày"};
+
+        try {
+            // Xóa các mục hiện tại trong JComboBox
+            jComboBox2.removeAllItems();
+
+            // Thêm các giá trị cố định vào JComboBox
+            for (String loaiVe : loaiVeValues) {
+                jComboBox2.addItem(loaiVe);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Lỗi khi tải danh sách loại vé: " + e.getMessage(), "Lỗi", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     
     private void loadTableData() {
         DefaultTableModel model = new DefaultTableModel() {
@@ -314,12 +312,12 @@ public class XeFrame extends javax.swing.JFrame {
         };
         model.addColumn("Mã SV");
         model.addColumn("Biển Số");
-        model.addColumn("Ngày Gửi Xe");
+        model.addColumn("Loại Vé");
         model.addColumn("Sửa");
         model.addColumn("Xóa");
 
         // Thêm dữ liệu vào mô hình bảng
-        String sqlSelect = "SELECT sv.MaSV, sv.SoCMT, sv.NgaySinh, sv.Lop, sv.SoPhong, sv.QueQuan , sv.NgayVaoO, xe.BienSo, xe.NgayDangKy FROM SinhVien sv JOIN XeDangKy xe ON sv.MaSV = xe.MaSV";
+        String sqlSelect = "SELECT sv.MaSV, sv.SoCMT, sv.NgaySinh, sv.Lop, sv.SoPhong, sv.QueQuan , sv.NgayVaoO, xe.BienSo, xe.NgayDangKy, xe.LoaiVe FROM SinhVien sv JOIN XeDangKy xe ON sv.MaSV = xe.MaSV";
         try {
             ResultSet rsXe = MySqlConnect.executeSQL(sqlSelect);
 
@@ -335,14 +333,14 @@ public class XeFrame extends javax.swing.JFrame {
                 );
                 Xe xe = new Xe(
                         rsXe.getString("BienSo"),
-                        rsXe.getDate("NgayDangKy")
+                        rsXe.getString("LoaiVe")
                 );
 
                 // Thêm hàng vào DefaultTableModel
                 model.addRow(new Object[]{
                     sv.getMaSv(),
                     xe.getBienSo(),
-                    xe.getNgayDangKy(),
+                    xe.getLoaiVe(),
                     "Sửa",
                     "Xóa"
                 });
@@ -386,7 +384,7 @@ public class XeFrame extends javax.swing.JFrame {
         if (row >= 0) {
             jComboBox1.setSelectedItem(jTable1.getValueAt(row, 0).toString());  // Mã SV
             jTextField1.setText(jTable1.getValueAt(row, 1).toString()); // Biển số xe
-            jTextField2.setText(jTable1.getValueAt(row, 2).toString()); // Ngày Đăng Ký
+            jComboBox2.setSelectedItem(jTable1.getValueAt(row, 3).toString());  // Loại Vé
             jButton1.setText("Sửa");
             CurrentBienSo = jTable1.getValueAt(row, 1).toString();
         }
@@ -411,12 +409,12 @@ public class XeFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

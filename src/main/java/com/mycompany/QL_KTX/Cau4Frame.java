@@ -23,7 +23,7 @@ public class Cau4Frame extends javax.swing.JFrame {
      * Creates new form Cau1Frame
      */
     public Cau4Frame() {
-        this.setTitle("Thống kê hóa đơn 1 tháng của sinh viên");
+        this.setTitle("Câu 4");
         initComponents();
         // Load dữ liệu cho bản khi lần đầu vào
         loadTableData();

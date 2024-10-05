@@ -103,7 +103,7 @@ public class QL_KTX extends javax.swing.JFrame {
         jMenu2.setText("Thống kê báo cáo");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMenuItem3.setText("Câu 1: Thống kê số tiền 1 tháng của sinh viên");
+        jMenuItem3.setText("Câu 1");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -119,7 +119,7 @@ public class QL_KTX extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem8);
 
-        jMenuItem9.setText("Câu 3: ");
+        jMenuItem9.setText("Câu 3");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem9ActionPerformed(evt);
@@ -127,7 +127,7 @@ public class QL_KTX extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem9);
 
-        jMenuItem10.setText("Câu 4: ");
+        jMenuItem10.setText("Câu 4");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem10ActionPerformed(evt);

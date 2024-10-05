@@ -23,7 +23,7 @@ public class Cau2Frame extends javax.swing.JFrame {
      * Creates new form Cau1Frame
      */
     public Cau2Frame() {
-        this.setTitle("Thống kê hóa đơn từng dịch vụ");
+        this.setTitle("Câu 2");
         initComponents();
         // Load dữ liệu cho bản khi lần đầu vào
         loadTableData();
@@ -190,7 +190,7 @@ public class Cau2Frame extends javax.swing.JFrame {
                 jComboBox1.addItem(Combobox1.getString("MaDV"));
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, "Lỗi khi tải danh sách Sinh vien: " + e.getMessage(), "Lỗi", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Lỗi khi tải danh sách TenDV: " + e.getMessage(), "Lỗi", JOptionPane.ERROR_MESSAGE);
         }
 
     }
@@ -231,7 +231,7 @@ private void loadTableData() {
         String TuNgay = jTextField1.getText();
         String DenNgay = jTextField2.getText();
         // Thêm dữ liệu vào mô hình bảng
-        String sqlSelect = "select sddv.MaSV, SUM(dv.DonGia) as TongTien from SuDungDichVu as sddv "+
+        String sqlSelect = "select sddv.MaSV, SUM(dv.DonGia * sddv.SoLanSuDung) as TongTien from SuDungDichVu as sddv "+
                 "JOIN dichvu as dv on dv.MaDV = sddv.MaDV "+
             "join sinhvien as sv on sv.MaSV = sddv.MaSV "+
           

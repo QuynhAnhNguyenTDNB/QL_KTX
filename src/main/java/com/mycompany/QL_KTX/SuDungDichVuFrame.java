@@ -51,6 +51,8 @@ public class SuDungDichVuFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,16 +118,13 @@ public class SuDungDichVuFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setText("Số lần sử dụng");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,6 +142,18 @@ public class SuDungDichVuFrame extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(11, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,10 +172,18 @@ public class SuDungDichVuFrame extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
@@ -217,6 +236,7 @@ public class SuDungDichVuFrame extends javax.swing.JFrame {
             MaDV = "";
         }
         String NgaySuDung = jTextField1.getText();
+        String SoLanSuDung = jTextField2.getText();
         boolean validateNgaySuDung = isValidDate(NgaySuDung);
         String sql;
         System.out.println(NgaySuDung);
@@ -228,10 +248,10 @@ public class SuDungDichVuFrame extends javax.swing.JFrame {
         }
         if(this.currentId != 0){
             // Câu lệnh UPDATE
-            sql = "UPDATE SuDungDichVu SET MaSV ='" + MaSV + "', MaDV ='" + MaDV + "',  NgaySuDung ='" + NgaySuDung + "' WHERE Id = " + this.currentId;
+            sql = "UPDATE SuDungDichVu SET MaSV ='" + MaSV + "', MaDV ='" + MaDV + "',  NgaySuDung ='" + NgaySuDung + "',  SoLanSuDung ='" + SoLanSuDung + "' WHERE Id = " + this.currentId;
         } else {
             // Câu lệnh INSERT
-            sql = "INSERT INTO SuDungDichVu (MaSV, MaDV, NgaySuDung) VALUES ('" + MaSV + "', '" + MaDV + "', '" + NgaySuDung + "')";
+            sql = "INSERT INTO SuDungDichVu (MaSV, MaDV, NgaySuDung,SoLanSuDung) VALUES ('" + MaSV + "', '" + MaDV + "', '" + NgaySuDung + "', '" + SoLanSuDung + "')";
         }
         try {
             int rowsAffected = MySqlConnect.executeUpdate(sql);
@@ -275,11 +295,13 @@ public class SuDungDichVuFrame extends javax.swing.JFrame {
         model.addColumn("Mã sinh viên");
         model.addColumn("Mã dịch vụ");
         model.addColumn("Ngày sử dụng");
+        model.addColumn("Số lần sử dụng");
+        model.addColumn("Thành tiền");
         model.addColumn("Sửa");
         model.addColumn("Xóa");
 
         // Thêm dữ liệu vào mô hình bảng
-        String sqlSelect = "SELECT sddv.* FROM SuDungDichVu sddv";
+        String sqlSelect = "SELECT sddv.Id,sddv.MaSV,sddv.MaDV,sddv.NgaySuDung,sddv.SoLanSuDung,(dv.DonGia * sddv.SoLanSuDung) AS TongTien FROM SuDungDichVu sddv JOIN dichvu dv ON sddv.MaDV = dv.MaDV";
         try {
             ResultSet rs = MySqlConnect.executeSQL(sqlSelect);
 
@@ -288,7 +310,8 @@ public class SuDungDichVuFrame extends javax.swing.JFrame {
                         rs.getString("Id"),
                         rs.getString("MaSV"),
                         rs.getString("MaDV"),
-                        rs.getDate("NgaySuDung")
+                        rs.getDate("NgaySuDung"),
+                        rs.getInt("SoLanSuDung")
                 );
 
                 // Thêm hàng vào DefaultTableModel
@@ -297,6 +320,8 @@ public class SuDungDichVuFrame extends javax.swing.JFrame {
                     sddv.getMaSV(),
                     sddv.getMaDV(),
                     sddv.getNgaySuDung(),
+                    sddv.getSoLanSuDung(),
+                    rs.getString("TongTien"),
                     "Sửa",
                     "Xóa"
                 });
@@ -369,8 +394,9 @@ public class SuDungDichVuFrame extends javax.swing.JFrame {
             jComboBox1.setSelectedItem(jTable1.getValueAt(row, 1).toString()); 
             jComboBox2.setSelectedItem(jTable1.getValueAt(row, 2).toString()); 
             jTextField1.setText(jTable1.getValueAt(row, 3).toString()); 
+            jTextField2.setText(jTable1.getValueAt(row, 4).toString());
             jButton1.setText("Sửa");
-            this.currentId = Integer.parseInt(jTextField1.getText());
+            this.currentId = Integer.parseInt(jTable1.getValueAt(row, 0).toString());
         }
     }
     
@@ -427,8 +453,10 @@ public class SuDungDichVuFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

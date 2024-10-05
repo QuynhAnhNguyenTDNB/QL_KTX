@@ -23,7 +23,7 @@ public class Cau1Frame extends javax.swing.JFrame {
      * Creates new form Cau1Frame
      */
     public Cau1Frame() {
-        this.setTitle("Thống kê hóa đơn 1 tháng của sinh viên");
+        this.setTitle("Câu 1");
         initComponents();
         // Load dữ liệu cho bản khi lần đầu vào
         loadTableData();
@@ -157,19 +157,7 @@ public class Cau1Frame extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        //        String sqlcombobox2 = "SELECT p.SoPhong FROM Phong p";
-        //        try {
-            //            ResultSet combobox2 = MySqlConnect.executeSQL(sqlcombobox2);
-            //
-            //                jComboBox2.removeAllItems();
-            //
-            //                String soPhong = combobox2.getString("SoPhong");
-            //                jComboBox2.addItem(soPhong);
-            //
-            //        } catch (SQLException ex) {
-            //            System.out.println("Failed to retrieve data from the database.");
-            //        }
-
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private boolean isValidDate(String dateStr) {
@@ -231,11 +219,13 @@ private void loadTableData() {
         String TuNgay = jTextField1.getText();
         String DenNgay = jTextField2.getText();
         // Thêm dữ liệu vào mô hình bảng
-        String sqlSelect = "select sv.MaSV, SUM(dv.DonGia) as TongTien from SuDungDichVu as sddv "+
+        String sqlSelect = "SELECT sv.MaSV, SUM(dv.DonGia * sddv.SoLanSuDung) + p.DonGia AS TongTien from SuDungDichVu as sddv "+
             "join sinhvien as sv on sv.MaSV = sddv.MaSV "+
             "JOIN dichvu as dv on dv.MaDV = sddv.MaDV "+
-            " where sddv.MaSV = '"+MaSV+"' and sddv.NgaySuDung BETWEEN '"+TuNgay+"' AND '"+DenNgay+"'";
+            "JOIN phong p ON p.SoPhong = sv.SoPhong "+
+            " where sddv.MaSV = '"+MaSV+"' and sddv.NgaySuDung BETWEEN '"+TuNgay+"' AND '"+DenNgay+"' and sv.NgayVaoO <= '"+DenNgay+"'";
         try {
+            System.out.println(sqlSelect);
             ResultSet rs = MySqlConnect.executeSQL(sqlSelect);
 
             while (rs != null && rs.next()) {

@@ -15,12 +15,14 @@ public class SuDungDichVu {
     private String MaSV;
     private String MaDV;
     private Date NgaySuDung;
+    private int SoLanSuDung;
 
-    public SuDungDichVu(String Id, String MaSV, String MaDV, Date NgaySuDung) {
+    public SuDungDichVu(String Id, String MaSV, String MaDV, Date NgaySuDung, int SoLanSuDung) {
         this.Id = Id;
         this.MaSV = MaSV;
         this.MaDV = MaDV;
         this.NgaySuDung = NgaySuDung;
+        this.SoLanSuDung = SoLanSuDung;
     }
     
     
@@ -56,6 +58,16 @@ public class SuDungDichVu {
     public void setNgaySuDung(Date NgaySuDung) {
         this.NgaySuDung = NgaySuDung;
     }
+
+    public int getSoLanSuDung() {
+        return SoLanSuDung;
+    }
+
+    public void setSoLanSuDung(int SoLanSuDung) {
+        this.SoLanSuDung = SoLanSuDung;
+    }
+
+    
 
 
     

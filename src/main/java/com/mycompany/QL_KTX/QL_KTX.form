@@ -72,7 +72,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="C&#xe2;u 1: Th&#x1ed1;ng k&#xea; s&#x1ed1; ti&#x1ec1;n 1 th&#xe1;ng c&#x1ee7;a sinh vi&#xea;n"/>
+                <Property name="text" type="java.lang.String" value="C&#xe2;u 1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
@@ -88,7 +88,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
               <Properties>
-                <Property name="text" type="java.lang.String" value="C&#xe2;u 3: "/>
+                <Property name="text" type="java.lang.String" value="C&#xe2;u 3"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem9ActionPerformed"/>
@@ -96,7 +96,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem10">
               <Properties>
-                <Property name="text" type="java.lang.String" value="C&#xe2;u 4: "/>
+                <Property name="text" type="java.lang.String" value="C&#xe2;u 4"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem10ActionPerformed"/>
