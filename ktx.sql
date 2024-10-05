@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2024 at 08:07 AM
+-- Generation Time: Oct 05, 2024 at 08:20 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -55,24 +55,6 @@ CREATE TABLE `guixe` (
   `ThoiGianGuiXe` datetime DEFAULT NULL,
   `SoLanLayGui` int(11) DEFAULT 0,
   `SoTienPhaiTra` decimal(10,2) DEFAULT 0.00
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `hoadon`
---
-
-CREATE TABLE `hoadon` (
-  `MaHD` int(11) NOT NULL,
-  `MaSV` varchar(10) DEFAULT NULL,
-  `Thang` int(11) DEFAULT NULL,
-  `Nam` int(11) DEFAULT NULL,
-  `TienPhong` decimal(10,2) DEFAULT NULL,
-  `TienDichVu` decimal(10,2) DEFAULT NULL,
-  `TienGuiXe` decimal(10,2) DEFAULT NULL,
-  `TongTien` decimal(10,2) DEFAULT NULL,
-  `TrangThai` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -277,13 +259,6 @@ ALTER TABLE `guixe`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `hoadon`
---
-ALTER TABLE `hoadon`
-  ADD PRIMARY KEY (`MaHD`),
-  ADD KEY `MaSV` (`MaSV`);
-
---
 -- Indexes for table `khachthamquan`
 --
 ALTER TABLE `khachthamquan`
@@ -327,12 +302,6 @@ ALTER TABLE `guixe`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `hoadon`
---
-ALTER TABLE `hoadon`
-  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `khachthamquan`
 --
 ALTER TABLE `khachthamquan`
@@ -347,12 +316,6 @@ ALTER TABLE `sudungdichvu`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `hoadon`
---
-ALTER TABLE `hoadon`
-  ADD CONSTRAINT `hoadon_ibfk_1` FOREIGN KEY (`MaSV`) REFERENCES `sinhvien` (`MaSV`);
 
 --
 -- Constraints for table `khachthamquan`
